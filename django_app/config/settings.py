@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'member.MyUser'
+
 
 # Application definition
 
@@ -40,7 +42,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'snippets',
-    'django_extensions'
+    'django_extensions',
+    'member',
 ]
 
 MIDDLEWARE = [
@@ -123,4 +126,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# AUTH_USER_MODEL = /
+
