@@ -8,6 +8,9 @@ STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 
 class Snippet(models.Model):
+    # owner필드를 추가, memeber app을 추가하고 CustomUser를 생성하고
+    # 해당 User를 settings.AUTH_USER_MODEL을 참조하는 방식을 사용
+    owner = models.ForeignKey('CustomUser', related_name='snippet')
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default='')
     code = models.TextField()

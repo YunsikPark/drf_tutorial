@@ -31,6 +31,7 @@ def snippet_list(request):
             return JSONResponse(serializer.data, status=201)
         return JSONResponse(serializer.errors, status=400)
 
+
 @csrf_exempt
 def snippet_detail(request, pk):
     """
@@ -56,4 +57,3 @@ def snippet_detail(request, pk):
     elif request.method == 'DELETE':
         snippet.delete()
         return HttpResponse(status=204)
-
